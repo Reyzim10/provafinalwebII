@@ -9,6 +9,7 @@
   "author": "francisco araujo",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1"
   }
 }
