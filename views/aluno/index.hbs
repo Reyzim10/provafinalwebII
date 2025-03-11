@@ -1,0 +1,24 @@
+<h2>Lista de Alunos</h2>
+<a href="/aluno/cadastrar" class="btn btn-primary mb-3">Cadastrar Novo Aluno</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Matrícula</th>
+      <th>E-mail</th>
+      <th>Telefone</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each alunos}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{nome}}</td>
+      <td>{{matricula}}</td>
+      <td>{{email}}</td>
+      <td>{{telefone}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

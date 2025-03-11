@@ -1,0 +1,22 @@
+<h2>Lista de Disciplinas</h2>
+<a href="/disciplina/cadastrar" class="btn btn-primary mb-3">Cadastrar Nova Disciplina</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Código</th>
+      <th>Carga Horária</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each disciplinas}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{nome}}</td>
+      <td>{{codigo}}</td>
+      <td>{{cargaHoraria}} horas</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

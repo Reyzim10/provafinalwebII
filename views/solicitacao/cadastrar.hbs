@@ -1,0 +1,26 @@
+<h2>Nova Solicitação</h2>
+<form action="/solicitacao/salvar" method="POST">
+  <div class="mb-3">
+    <label for="alunoId" class="form-label">Aluno</label>
+    <select class="form-select" id="alunoId" name="alunoId" required>
+      <option value="">Selecione um aluno</option>
+      {{#each alunos}}
+      <option value="{{id}}">{{nome}} ({{matricula}})</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="disciplinaId" class="form-label">Disciplina</label>
+    <select class="form-select" id="disciplinaId" name="disciplinaId" required>
+      <option value="">Selecione uma disciplina</option>
+      {{#each disciplinas}}
+      <option value="{{id}}">{{nome}} ({{codigo}})</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="justificativa" class="form-label">Justificativa</label>
+    <textarea class="form-control" id="justificativa" name="justificativa" rows="3" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-success">Enviar Solicitação</button>
+</form>

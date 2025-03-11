@@ -1,0 +1,33 @@
+<h2>Gerenciamento de Solicitações</h2>
+<a href="/solicitacao/cadastrar" class="btn btn-primary mb-3">Nova Solicitação</a>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Aluno</th>
+      <th>Disciplina</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each solicitacoes}}
+    <tr>
+      <td>{{id}}</td>
+      <td>{{aluno.nome}}</td>
+      <td>{{disciplina.nome}}</td>
+      <td>{{status}}</td>
+      <td>
+        <form action="/solicitacao/atualizar-status" method="POST" style="display:inline;">
+          <input type="hidden" name="id" value="{{id}}">
+          <select name="status" class="form-select form-select-sm d-inline w-auto" onchange="this.form.submit()">
+            <option value="pendente" {{#if (eq status "pendente")}}selected{{/if}}>Pendente</option>
+            <option value="aprovado" {{#if (eq status "aprovado")}}selected{{/if}}>Aprovado</option>
+            <option value="rejeitado" {{#if (eq status "rejeitado")}}selected{{/if}}>Rejeitado</option>
+          </select>
+        </form>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
